@@ -5,7 +5,7 @@
 ## Location
 
  * When: 2:20-3:40, Tue & Thu, Winter quarter 2016-2017
- * Where: PAB B305 (Physics-Astronomy Building, 3rd Floor, western end of the hallway)
+ * Where: PAB B305 (Physics-Astronomy Building, 3rd Floor, eastern end of the hallway)
 
 ## Description
 
