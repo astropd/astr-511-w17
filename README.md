@@ -20,6 +20,7 @@ In this class we will:
 ## Class Materials
 
  * Syllabus and course description: [click here](syllabus/syllabus.pdf)
- * Homework 1: [Assignment](homeworks/project1.pdf) and [data file](homeworks/Astr511HW1data.dat.gz)
+ * Homework 1: [Assignment](homeworks/project1.pdf) and 
+   [data file](http://www.astro.washington.edu/users/ivezic/Teaching/Astr511/Astr511HW1data.dat.gz)
 
 More materials will be added to this repository as needed.
