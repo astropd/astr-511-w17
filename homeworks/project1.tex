@@ -1,0 +1,242 @@
+\documentstyle[12pt,aaspp4]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% author-defined commands
+\newcommand\about     {\hbox{$\sim$}}
+\newcommand\x         {\hbox{$\times$}}
+\newcommand\othername {\hbox{$\dots$}}
+\def\eq#1{\begin{equation} #1 \end{equation}}
+\def\eqarray#1{\begin{eqnarray} #1 \end{eqnarray}}
+\def\eqarraylet#1{\begin{mathletters}\begin{eqnarray} #1 %
+                  \end{eqnarray}\end{mathletters}}
+\def\non    {\nonumber \\}
+\def\DS     {\displaystyle}
+\def\E#1{\hbox{$10^{#1}$}}
+\def\sub#1{_{\rm #1}}
+\def\case#1/#2{\hbox{$\frac{#1}{#2}$}}
+\def\about  {\hbox{$\sim$}}
+\def\x      {\hbox{$\times$}}
+\def\ug               {\hbox{$u-g$}}
+\def\gr               {\hbox{$g-r$}}
+\def\ri               {\hbox{$r-i$}}
+\def\iz               {\hbox{$i-z$}}
+\def\a                {\hbox{$a^*$}}
+\def\O                {\hbox{$O$}}
+\def\E                {\hbox{$E$}}
+\def\Oa               {\hbox{$O_a$}}
+\def\Ea               {\hbox{$E_a$}}
+\def\Jg               {\hbox{$J_g$}}
+\def\Fg               {\hbox{$F_g$}}
+\def\J                {\hbox{$J$}}
+\def\F                {\hbox{$F$}}
+\def\N                {\hbox{$N$}}
+\def\dd               {\hbox{deg/day}}
+\def\mic              {\hbox{$\mu{\rm m}$}}
+\def\Mo{\hbox{$M_{\odot}$}}
+\def\Lo{\hbox{$L_{\odot}$}}
+\def\comm#1           {\tt #1}
+\def\refto#1          {\ref #1}
+\def\T#1              {({\bf #1})}
+\def\H#1              {({\it #1})}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{ {\bf Term Project \# 1}}  
+                   
+\centerline{Galactic Astronomy (Astr 511); Winter Quarter 2017}
+\centerline{prof. Mario Juri\'{c} and prof. \v{Z}eljko Ivezi\'{c}, University of Washington} 
+
+The text data file Astr511HW1data.dat (linked to class webpage as
+a gzipped file) contains SDSS measurements for 
+about 600,000 stars with $b>80^\circ$ (i.e. within 10$^\circ$ 
+from the north galactic pole) and $14<r<21$. The data are listed as one line
+per star, with each line containing the following quantities:
+\begin{itemize}
+\item {\bf ra dec:} right ascension and declination (J2000.0)
+ in decimal degrees 
+\item {\bf run:} SDSS observing night identifier
+\item {\bf Ar:} the value of the $r$ band ISM extinction used to 
+     correct photometry (adopted from the SFD maps; for bands 
+     other than $r$ standard SDSS coefficients are used)
+\item {\bf u g r i z:} SDSS photometry (corrected for the ISM
+       extinction)
+\item {\bf uErr gErr rErr iErr zErr:} photometric errors
+\item {\bf pmL pmB:} proper motion vector components in the
+      longitudinal and latitudinal directions (mas/yr); set to
+      999.99 when no measurement is available 
+\item {\bf pmErr:} mean proper motion error (mas/yr); set to
+      999.99 when no measurement is available 
+\end{itemize}
+
+For stars from this file, compute absolute magnitude using
+a photometric parallax relation, $M_r(g-i,[Fe/H])$, given
+by eqs. A2, A3 and A7 from Ivezi\'{c} et al. 2008 (ApJ, 684, 287).
+For computing metallicity, $[Fe/H]$, instead of their
+eq.~4, use an updated expression from Bond et al. 2010 (ApJ, 716, 1): 
+\begin{equation}
+\label{Zphotom}
+  [Fe/H] = A + Bx + Cy + Dxy  + Ex^2 + Fy^2 + Gx^2 y + Hxy^2 + Ix^3 + Jy^3,
+\end{equation}
+with $x=(u-g)$ and $y=(g-r)$, and the best-fit coefficients ($A$--$J$) = 
+($-$13.13, 14.09, 28.04, $-$5.51, $-$5.90, $-$58.68, 9.14, $-$20.61, 0.0,
+58.20). This expression if valid only for $g-r<0.6$; for redder stars
+use $[Fe/H]=-0.6$. 
+
+Since $b>80^\circ$, for these stars the distance from the galactic plane, $Z$,
+and the distance from us, $D$, are approximately the same. Using $Z=D$, where
+$D$ is computed from $r-M_r= 5*\log{\left(D/({\rm 10 pc})\right)}$, do the following:
+\begin{enumerate}
+\item For stars with $0.2<g-r<0.4$, plot $\ln(\rho)$ vs. $Z$, where 
+  $\rho$ is the stellar number density in a given bin (e.g. look at 
+  Figs. 5 and 15 in Juri\'{c} et al. 2008, ApJ, 673, 864 for similar
+  examples). You can approximate
+  $\rho(Z) = N(Z)/V(Z)$, where $N(Z)$ is the number of stars in a given
+  bin, and $V(Z)$ is the bin volume (note that the solid angle is 
+  $\Delta \Omega \sim 314$ deg$^\circ$). What is the $Z$ range where you
+  believe the results, and why?
+\item Add $\ln(\rho)$ vs. $Z$ for stars with $0.4<g-r<0.6$, $0.6<g-r<0.8$,
+      and $0.8<g-r<1.0$ (you can rescale all curves to the same value
+      at some fiducial $Z$, or leave them as they are). Discuss the 
+      differences compared to the $0.2<g-r<0.4$ subsample. Why do we
+      expect larger systematic errors for $0.8<g-r<1.0$ than for the
+      adjacent bin with $0.4<g-r<0.6$?
+\item For subsample with $0.2<g-r<0.4$, separate stars into low-metallicity
+      sample, $[Fe/H]<-1.0$, and high-metallicity sample, $[Fe/H]>-1.0$. 
+      Compare their $\ln(\rho)$ vs. $Z$ curves. What do you conclude?
+\item For these low-metallicity and high-metallicity samples, plot and 
+      compare their differential $r$ band magnitude distributions (i.e. the 
+      number of sources per unit magnitude, in small, say 0.1 mag wide, $r$
+      bins). What do you conclude? How would you numerically describe 
+      these curves (i.e. what kind of functional form for the fitting
+      functions would you choose)? 
+\item What should be the faint $r$ band limit for a survey to be able to
+      map the $\ln(\rho)$ vs. $Z$ profile out to 100 kpc using main-sequence
+      stars? Assume the same color distribution as for the SDSS sample. 
+      For a solid angle of 1 deg$^2$, how many stars with $0.2<g-r<0.4$
+      would you expect with distances between 90 kpc and 100 kpc? 
+      Assume whatever additional information you need to solve this 
+      problem (not all required information is provided here).
+\end{enumerate}
+
+
+
+\end{document}
+
+
+From Reid \& Hawley:
+
+  v_x =   v_l sin(l)  +  v_b sin(b) cos(l) - v_r cos(b) cos(l)
+
+  v_y = - v_l cos(l)  +  v_b sin(b) sin(l) - v_r cos(b) sin(l)
+
+  v_z =   v_b cos(b)  +  v_r sin(b) 
+
+ ansatz: if v_z=0, v_r = - v_b cos(b) / sin(b)
+
+
+
+
+
+    HW:
+
+
+
+IDL or other code, reading a number of vectors with several
+million elements from files; simple operations with vectors
+such as binning and low-order statistics; visualization
+
+
+1  density law from counts 
+   prepare SDSS file with ra, dec, ugriz for 0.2<g-r<0.6 and b>70
+   compute FeH and distance using tomography (and appendix)
+   plot ln(rho) vs. Z for low and high FeH, separately for 
+   g-r=0.2-0.4 and 0.4-0.6, compare 
+   
+   take LSST simulated sample, how well can we measure halo profile?
+
+2  WD luminosity function
+   take LSST simulation, fit photometric parallax, apply to deeper
+   sample, separate by vtan into halo and disk, compute LFs (Cminus)
+
+3  S82 metallicity distributions 
+   for coadded file with 0.2<g-r<0.4 compute FeH and 
+   plot median, rms, fraction of >+-2 sigma outliers
+   in the polar plot (RA vs D), over plot lines of 
+   constant l and b
+
+4  Potentials from Jeans equations 
+   For 0.2<g-r<0.4 sample in the meridional plane, 
+   compute velocity dispersions, plug into Jeans equations,
+   get potential gradient separately for D and H stars
+
+
+Astr 509:
+1: counts, p5-11 
+2: v_c etc for spherical systems, p13-23 (also p. 9-15 in lec 3)
+4: refs for MW potential, p2
+5 and 6: orbits of stars!
+7 and 8 and 9: derivation of Boltzman eq and Jeans eqs.
+10: virial theorem
+11: King profiles and Jeans instability
+12: spiral arms
+14: galaxy collisions
+15: scattering of disk stars
+
+Astr 598:
+1: measurement of I, p2-4, add calib doc
+2: types of mags, p11-16
+5: stars, separating pops
+7: halo structure
+8: galaxies in SDSS
+12: clusters of galaxies
+
+Astr323:
+2: intro to MW, and ISM
+4: spiral gals, 5: ellipticals
+6: gals in SDSS and LF
+8: gal formation and interactions
+
+
+  \item {\bf Tue: Jan 13}  Introduction, review of stellar astrophysics
+     photom: 598/1,2; sep pop: 598/5, virial theorem 509/10
+  \item {\bf Thu: Jan 15}  Review of galaxies
+     S and E: 323;4,5 spiral arms in 509/12, 323/8, clusters 598/12
+  \item {\bf Tue: Jan 20}  Galaxies in SDSS, luminosity function
+     598/8, 323/6 
+  \item {\bf Thu: Jan 22}  Basic properties of the Milky Way (MW)
+    intro 323/2, counts 509/1, MW potential, halo struct 598/7
+  \item {\bf Tue: Jan 27}  Basic properties of MW ISM (including SFD maps) {\bf HW 1 due}
+     323/2  add extinction properties Mie theory 
+  \item {\bf Thu: Jan 29}  Globular clusters and other simple stellar pops
+      509/11 models from Bruzual, Girardi (papers?) 
+
+
+  \item {\bf Tue: Feb  3}  Stellar count distribution in MW: I 
+  \item {\bf Thu: Feb  5}  Stellar count distribution in MW: II {\bf HW 2 due}
+  \item {\bf Tue: Feb 10}  Guest lecturer: ???
+  \item {\bf Thu: Feb 12}  Stellar metallicity distribution in MW
+  \item {\bf Tue: Feb 17}  Stellar kinematics in MW
+  \item {\bf Thu: Feb 19}  Merger history: observations and theory {\bf HW 3 due}
+  \item {\bf Tue: Feb 24}  Jeans Equations and Applications
+  \item {\bf Thu: Feb 26}  Stellar Orbits, Scattering of Disk Stars
+  \item {\bf Tue: Mar  3}  Guest lecturer: Numerical approach to galaxy formation
+  \item {\bf Thu: Mar  5}  The Road Ahead: Gaia and LSST {\bf HW 4 due}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
