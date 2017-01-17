@@ -20,5 +20,6 @@ In this class we will:
 ## Class Materials
 
  * Syllabus and course description: [click here](syllabus/syllabus.pdf)
+ * For projects/homeworks, [click here](http://www.astro.washington.edu/users/ivezic/t_astr511.html)
 
 More materials will be added to this repository as needed.
