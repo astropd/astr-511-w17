@@ -22,5 +22,11 @@ In this class we will:
  * Syllabus and course description: [click here](syllabus/syllabus.pdf)
  * Homework 1: [Assignment](homeworks/project1.pdf) and 
    [data file](http://www.astro.washington.edu/users/ivezic/Teaching/Astr511/Astr511HW1data.dat.gz)
+ * Homework 2: [Assignment](homeworks/project2.pdf)
+   	       [data file 1](homeworks/LSSTsimWDtruth60.dat.gz)
+   	       [data file 2](homeworks/LSSTsimWDobs60.dat.gz)
+   	       [data file 3](homeworks/WDlumfuncDisk.dat.gz)
+   	       [data file 4](homeworks/WDlumfuncHalo.dat.gz)
+	       [model description](homeworks/WDdraft.pdf)
 
 More materials will be added to this repository as needed.
