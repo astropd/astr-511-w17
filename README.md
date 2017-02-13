@@ -28,5 +28,6 @@ In this class we will:
    	       [data file 3, ](homeworks/WDlumfuncDisk.dat.gz)
    	       [data file 4, ](homeworks/WDlumfuncHalo.dat.gz) and 
 	       [a model description](homeworks/WDdraft.pdf)
+ * Homework 3: [Assignment](homeworks/project3.pdf)
 
 More materials will be added to this repository as needed.
