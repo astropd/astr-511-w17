@@ -54,9 +54,9 @@
 \section{Introduction} 
 
 
-This homework is based on APOGEE-ASPCAP data\footnote{See http://www.sdss.org/dr12/irspec/}. 
-We will use measured abundances for 15 elements (from summary APOGEE-ASPCAP allStar file) and 
-other data to study the variation of abdundance distribution as a function of stellar population (halo,
+This homework is based on APOGEE-ASPCAP spectroscopic data\footnote{See http://www.sdss.org/dr12/irspec/}. 
+We will use measured abundances for 15 elements (from the summary APOGEE-ASPCAP allStar file) and 
+other data to study the variation of abundance distribution as a function of stellar population (halo,
 thin disk, thick disk). 
 
 Copying verbatim from the SDSS Data Release webpage\footnote{http://www.sdss.org/dr12/irspec/aspcap/},
@@ -102,7 +102,7 @@ and $[Fe/H]$,
 FeH = data['Fe_H'].
 \end{verbatim}
 
-Using these data (for extra credit, use quality flags\footnote{See ASPCAP Bitmasks at http://www.sdss.org/dr12/irspec/parameters/} too!) and 
+Using these data (for extra credit, use quality flags\footnote{See ASPCAP Bitmasks section at http://www.sdss.org/dr12/irspec/parameters/} too!) and 
 \begin{enumerate}
 \item Estimate the median difference and root-mean-square (rms) scatter of the difference between $[\alpha/Fe]$ and $[\alpha/Fe]^\ast$. Does the distribution of this difference appear Gaussian? Is the median difference correlated with T$_{eff}$, log(g), $[Fe/H]$, or $[\alpha/Fe]$? 
 % a median of $-0.008$ dex and rms of 0.042 dex, 
@@ -111,19 +111,19 @@ Does the distribution of this difference appear Gaussian?
 Is the median difference correlated with T$_{eff}$, log(g), $[Fe/H]$, or $[\alpha/Fe]$? 
 % a median of $0.007$ dex and rms of 0.077 dex, 
 \item Plot the K vs. J$-$K color-magnitude Hess (pixelized) diagram and color code it by the mean log(g) per pixel.
-Do you any structure in the log(g) distribution (that is, is log(g) correlated with J-K or K)? If so, discuss and explain it. 
+Do you see any structure in the log(g) distribution (that is, is log(g) correlated with J-K or K)? If so, discuss and explain it. 
 Note that this real data file also includes some outliers; the plausible ranges to be used in the plot are 0.0 to 4.0 for 
-J-K color and 14 to 6 for K magnitude (real astronomers plot magnitudes as decreasing along y axis (bright is up)!). 
+the J-K color and 14 to 6 for K magnitude (real astronomers plot magnitudes as decreasing along y axis; i.e. bright is up!). 
 \item Plot log(g) vs. T$_{eff}$ Hess diagram and color code it by the mean $[Fe/H]$ per pixel.
 Describe and explain the seen structure (hint: the gradient of $[Fe/H]$). Axes should be oriented so that 
 this diagram resembles a standard Hertzsprung-Russell diagram.  
 \item Plot $[\alpha/Fe]$ vs. $[Fe/H]$ Hess diagram and color code it by the mean $[Fe/H]$ per pixel.
-Overplot contours showing the number of stars per pixel. Do you any structure? If so, discuss and explain it. 
+Overplot contours showing the number of stars per pixel. Do you see any structure? If so, discuss and explain it. 
 Hint: plot $[\alpha/Fe]$ histogram for a subsample with $-0.5 < [Fe/H] < -0.2$; is it Gaussian? 
 \item Plot $[\alpha/Fe]$ vs. $[Fe/H]$ Hess diagram and color code it by the velocity dispersion (rms scatter) per pixel.
 Overplot contours showing the number of stars per pixel. Do you any structure? If so, discuss and explain it. 
 \item Now repeat the last step separately for stars with Galactic latitudes $|b| < 5^\circ$ and $|b| > 20^\circ$ and 
-discuss if your previous answer makes sense.  
+use the observed difference to discuss whether your previous answer makes sense.  
 \end{enumerate}
 
 
